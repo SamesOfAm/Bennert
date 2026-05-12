@@ -1,0 +1,164 @@
+@import "variables";
+
+html.mobile_menu_active{
+  //overflow-y: hidden;
+}
+
+//_____________________________Desktop MobileMenu
+
+
+.mobile_menu{
+
+  .inner{
+    @include bg_grad_mark;
+    overflow: unset;
+
+    nav.mod_navigation{
+      margin: 23vh auto 0 auto;
+      max-width: 1260px;
+      a:before, strong:before, span:before{
+        content: url("/files/assets/icons/arrow_right_white.svg");
+        width: 7px;
+        display: inline-block;
+        margin-right: 7px;
+      }
+    }
+
+
+    ul li::before{
+      content: unset ;
+    }
+    a, strong{
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      transition: 0.4s;
+      font-size: 1.1em;
+    }
+
+    strong.active{
+      color: $yellow;
+    }
+    a:hover{
+      transition: 0.4s;
+      color: $yellow;
+    }
+
+
+
+    ul.level_1 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      > li {
+        width: 100%;
+        > a, strong {
+          width: 100%;
+          display: block;
+          border-bottom: 1px solid white;
+          margin: 0 0 10px 0;
+          padding: 0 0 10px 0;
+          font-size: 1.1em;
+          //font-weight: 750;
+        }
+      }
+    }
+    ul.level_2{
+      display: none;
+      li{
+        width: 100%;
+        a, strong.active{
+          width: 100%;
+          display: block;
+          border-bottom: 1px solid white;
+          margin: 0 0 10px 0;
+          padding: 0 0 10px 0;
+        }
+      }
+      li.last{
+        a, strong.active{
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+
+    ul.level_3{
+      display: none;
+    }
+  }
+
+  .mobile_menu_footer{
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 2px solid white;
+    padding: 30px 0 0 0;
+    width: $content_size;
+    margin: 0 0 30px 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    //social_icons steht global in main
+
+    .imprint{
+      .content-text{
+        p,a{
+          font-size: 14px;
+          line-height: 1.5;
+          text-decoration: none;
+          transition: 0.4s;
+          color: white;
+          text-transform: unset;
+        }
+        a:hover{
+          transition: 0.4s;
+          color:  $yellow;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+//_____________________________Ende Desktop MobileMenu
+
+$burger_right: 50%;
+$burger_width: 58px;
+$burger_pos_x: translateX(295px);
+
+.burger_1{
+  border-radius: 50%;
+  right: $burger_right;
+  transform: $burger_pos_x;
+  position: absolute;
+  top: 116px;
+  cursor: pointer;
+  width: $burger_width;
+  z-index: 9998;
+
+}
+.burger_2{
+  border-radius: 50%;
+  right: $burger_right;
+  transform: $burger_pos_x;
+  position: absolute;
+  top: 116px;
+  cursor: pointer;
+  width: $burger_width;
+  z-index: 9999;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.burger_2:hover{
+  opacity: 1;
+  transition: 0.4s;
+}
+
+
+.menu-close{
+  width: 200px;
+}

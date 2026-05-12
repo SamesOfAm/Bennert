@@ -1,0 +1,45 @@
+<div class="layout_short arc_<?= $this->archive->id ?> block<?= $this->class ?>" itemscope
+     itemtype="http://schema.org/Article">
+
+
+
+
+
+
+
+
+    <div class="news_short_image_text_wrapper">
+
+      <?php if ($this->addMedia): ?>
+        <?php echo $this->mediaPlayer; ?>
+      
+      
+        <?php elseif ($this->addImage): ?>
+            <?php $this->insert('image', $this->arrData); ?>
+
+        <?php else: { ?>
+            <figure class="image_container float_above">
+                <a href="<?= $this->href; ?>" title="Den Artikel lesen: <?= $this->title ?>">
+                    <img src="files/Layout/bennert_logo_blank.png" width="8000" height="6000" alt="" itemprop="image">
+                </a>
+            </figure>
+        <?php } ?>
+
+        <?php endif; ?>
+
+        <div class="content-text block" itemprop="description">
+          <?php if ($this->hasMetaFields): ?>
+              <p class="info">
+                  <time datetime="<?= $this->datetime ?>"
+                        itemprop="datePublished"><?= date_format(date_create($this->date), "d.m.Y") ?></time> <?= $this->author ?> <?= $this->commentCount ?>
+              </p>
+          <?php endif; ?>
+            <h2 itemprop="name"><?= $this->linkHeadline ?></h2>
+        </div>
+
+    </div>
+    <?php if ($this->hasText || $this->hasTeaser): ?>
+        <p></p>
+    <?php endif; ?>
+
+</div>

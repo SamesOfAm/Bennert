@@ -1,0 +1,290 @@
+@import "variables";
+
+h1 {
+  font-size: 33px;
+  margin: 10px 0;
+}
+
+h2:not([itemprop="name"]) {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+#container{
+  min-height: 472px;
+}
+
+mark{
+  background-color: $blue_light_plus;
+}
+
+::selection {
+  background-color: $blue_light_plus;
+  color: black;
+}
+
+video{
+  width: 100%;
+}
+
+.content-player {
+  margin: 20px 0;
+  &.hochformat {
+    video {
+      height: 80vh;
+    }
+  }
+}
+
+.ce_gallery{
+  min-height:467px !important;
+  margin: 20px 0;
+}
+
+.ce_form{
+  max-width: 800px;
+  margin: 70px auto;
+  .submit {
+    margin-top: 20px;
+    padding: 8px 10px;
+    background-color: $blue_dark;
+    border: 0;
+    font: 1.2em 'Lato', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .submit:hover{
+    transition: 0.4s;
+    background-color: $blue_light;
+  }
+}
+
+a{
+  color: $blue_light;
+  transition: 0.4s;
+}
+
+a:hover{
+  color: $blue_dark;
+  transition: 0.4s;
+}
+
+.mod_article > .first{
+  margin-top: 50px;
+}
+
+h3{
+  color: $blue_light;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+#main{
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  .mod_article{
+    margin: 30px 0;
+    width: 100%;
+  }
+}
+
+.content-text, .ce_hyperlink, .content-image{
+  max-width: 800px;
+  margin: 0 auto;
+  a{
+    font-weight: 800 !important;
+  }
+  ul{
+    list-style: none;
+    margin-left: 20px;
+  }
+  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: $blue_light; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -22px;
+    padding-left: 4px;
+    padding-right: 2px;
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.content-headline{
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+.content-player {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+h2.claim{
+  font-style: italic;
+  color: white;
+  text-transform: unset;
+  font-weight: 300;
+  font-size: 2.3em;
+}
+
+#main .ansprechpartner{
+  background-color: $blue_light_plus;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .ansprechpartner_info{
+    width: 50%;
+    a,p,h3{
+      color: white;
+      transition: 0.4s;
+    }
+    a:hover{
+      color: $blue_dark;
+      transition: 0.4s;
+    }
+    h3{
+      border-bottom: 2px solid white;
+      padding: 0 0 10px 0;
+    }
+    .content-text:first-child{
+      border-bottom: 1px solid white;
+      margin-bottom: 10px;
+    }
+  }
+  .content-image{
+    width: 100px;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .content-text{
+    strong,td{
+      color: white;
+    }
+    table{
+      tr{
+        border: unset;
+        margin: unset;
+      }
+    }
+  }
+}
+
+
+.social_icons{
+  display: flex;
+  justify-content: space-between;
+  width: 105px;
+  a{
+    width: 30px;
+    height: auto;
+  }
+}
+
+
+#main hr {
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: $blue_light;
+  border: 0
+}
+
+.stoerer_1{
+  width: 115px;
+  left: 50%;
+  position: absolute;
+  transform: translateY(-46%) translateX(380px);
+  z-index: 2;
+}
+
+.stoerer_2{
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  left: 50%;
+  position: absolute;
+  transform: translateY(-46%) translateX(380px);
+  z-index: 2;
+  bottom: -200px;
+  > div {
+    width: 115px;
+  }
+}
+
+.stoerer_3{
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  left: 50%;
+  position: absolute;
+  transform: translateY(-46%) translateX(-650px);
+  z-index: 2;
+  > div {
+    width: 115px;
+  }
+}
+
+.career-button {
+  background: #122e5d;
+  padding: 25px 45px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: white;
+  transition: filter 250ms;
+  &:hover {
+    filter: brightness(1.4);
+    color: white;
+  }
+}
+
+#cooperation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > .content-image {
+    width: 31%;
+    height: 250px;
+    margin-bottom: 80px;
+    &.first {
+      margin-top: 0;
+    }
+    > figure {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      > img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 667px) {
+  #cooperation > .content-image {
+    width: 100%;
+    > figure {
+      justify-content: center;
+    }
+  }
+}
