@@ -287,4 +287,23 @@ h2.claim{
       justify-content: center;
     }
   }
+
+  /* Der Container begrenzt die Höhe */
+  .content-player.hochformat figure,
+  .content-player.hochformat {
+    margin: 0;
+    max-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-player.hochformat video {
+    height: auto !important;
+    width: auto !important;
+    max-width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+  }
 }
+
