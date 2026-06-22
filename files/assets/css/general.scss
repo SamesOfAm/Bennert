@@ -1,2 +1,100 @@
 @import 'variables';
 
+.floating-cta {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 280px;
+  z-index: 9999;
+  overflow: visible;
+}
+
+
+.floating-cta:hover .cta-img-default {
+  opacity: 0;
+}
+
+.floating-cta:hover .cta-img-hover {
+  opacity: 1;
+}
+
+.cta-question,
+.cta-contact {
+  pointer-events: none;
+}
+
+
+.cta-img {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.cta-img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.cta-img-default {
+  transition: opacity .3s ease;
+}
+
+.cta-question {
+  position: absolute;
+  top: 165px;
+  left: 52px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 30px;
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.cta-text {
+  font-weight: 300;
+}
+
+.cta-contact {
+  position: absolute;
+  top: -7px;
+  left: 15px;
+  width: 210px;
+  color: #fff;
+  opacity: 0;
+  text-align: center;
+  transition: .3s ease;
+  h3 {
+    color: #fff !important;
+  }
+}
+
+.floating-cta:hover .cta-question {
+  opacity: 0;
+}
+
+.floating-cta:hover .cta-contact {
+  opacity: 1;
+}
+
+.cta-contact h3 {
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.cta-contact a {
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.cta-contact a:hover {
+  text-decoration: underline;
+}
+
+
+
+
