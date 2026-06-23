@@ -1,25 +1,26 @@
-<div class="floating-cta">
+<div class="floating-cta js-floating-cta">
 
-    <?php if ($this->image): ?>
-        <?php $img = \Contao\FilesModel::findByUuid($this->image); ?>
-        <img class="cta-img cta-img-default"
-             src="<?= $img->path ?>"
-             alt="">
-    <?php endif; ?>
+    <div class="cta-image-container">
+        <?php if ($this->image): ?>
+            <?php $img = \Contao\FilesModel::findByUuid($this->image); ?>
+            <img class="cta-img cta-img-default"
+                 src="<?= $img->path ?>"
+                 alt="">
+        <?php endif; ?>
 
-    <?php if ($this->image_hover): ?>
-        <?php $imgHover = \Contao\FilesModel::findByUuid($this->image_hover); ?>
-        <img class="cta-img cta-img-hover"
-             src="<?= $imgHover->path ?>"
-             alt="">
-    <?php endif; ?>
+        <?php if ($this->image_hover): ?>
+            <?php $imgHover = \Contao\FilesModel::findByUuid($this->image_hover); ?>
+            <img class="cta-img cta-img-hover"
+                 src="<?= $imgHover->path ?>"
+                 alt="">
+        <?php endif; ?>
+    </div>
 
     <div class="cta-question">
         <?= $this->question ?>
     </div>
 
     <div class="cta-contact">
-
         <?php if ($this->title): ?>
             <h3><?= $this->title ?></h3>
         <?php endif; ?>
@@ -33,7 +34,7 @@
         <?php if ($this->phone): ?>
             <p>
                 <a href="tel:<?= preg_replace('/\s+/', '', $this->phone) ?>">
-                    ☎  <?= $this->phone ?>
+                    ☎ <?= $this->phone ?>
                 </a>
             </p>
         <?php endif; ?>
@@ -41,11 +42,59 @@
         <?php if ($this->email): ?>
             <p>
                 <a href="mailto:<?= $this->email ?>">
-                    ✉  <?= $this->email ?>
+                    ✉ <?= $this->email ?>
                 </a>
             </p>
         <?php endif; ?>
 
     </div>
 
+    <!-- Popup mobile -->
+    <div class="cta-modal">
+
+        <div class="cta-modal-inner">
+            <div class="cta-modal-bennie">
+
+                <?php if ($this->image_hover): ?>
+                    <?php $imgHover = \Contao\FilesModel::findByUuid($this->image_hover); ?>
+                    <img class="cta-bennie-img" src="<?= $imgHover->path ?>" alt="">
+                <?php endif; ?>
+                <div class="cta-modal-contact">
+
+                    <?php if ($this->title): ?>
+                        <h3><?= $this->title ?></h3>
+                    <?php endif; ?>
+
+                    <?php if ($this->text): ?>
+                        <div class="cta-text">
+                            <?= $this->text ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->phone): ?>
+                        <p>
+                            <a href="tel:<?= preg_replace('/\s+/', '', $this->phone) ?>">
+                                ☎ <?= $this->phone ?>
+                            </a>
+                        </p>
+                    <?php endif; ?>
+
+                    <?php if ($this->email): ?>
+                        <p>
+                            <a href="mailto:<?= $this->email ?>">
+                                ✉ <?= $this->email ?>
+                            </a>
+                        </p>
+                    <?php endif; ?>
+
+                </div>
+
+            </div>
+            <button class="cta-modal-close" type="button">
+                <img src="files/Layout/close-button.svg" alt="Schließen">
+            </button>
+
+        </div>
+
+    </div>
 </div>
